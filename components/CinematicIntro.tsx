@@ -117,7 +117,7 @@ export default function CinematicIntro({ children }: CinematicIntroProps) {
           <Image className="cinematic-image" src="/images/intro-antelope-detail.webp" alt="Looking up through Lower Antelope Canyon" fill priority unoptimized sizes="100vw" />
           <div className="cinematic-shade" />
         </div>
-        <div className="cinematic-message"><h1>I find clarity<br />inside <em>complexity.</em></h1></div>
+        <div className="cinematic-message"><h1>Building tech that makes<br /><em>people&apos;s lives easier.</em></h1></div>
         <div className="opening-profile">{children}</div>
         <div className="opening-light" aria-hidden="true" />
       </div>

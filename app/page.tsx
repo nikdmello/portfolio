@@ -6,23 +6,29 @@ import ScrollScenes from '@/components/ScrollScenes'
 
 const roles = [
   {
+    period: '2026–Present',
+    company: 'Zenesis Consulting',
+    title: 'Project Engineer',
+    copy: 'Coordinate the digital workflows behind a real estate handover project in Dubai, working across booking, CRM, inspection, and owner sign-off systems.'
+  },
+  {
     period: '2023–2026',
     company: 'Associa',
     title: 'Software Developer',
-    copy: 'Built and operated backend systems for TownSq, from deployment automation and authentication to event-driven processing in AWS.',
-    impact: 'Re-architected synchronous workflows to process 10,000+ records per hour while eliminating timeout failures.'
+    copy: 'Built backend services and internal platforms for TownSq, including deployment automation, authentication, and event-driven workflows in AWS.',
+    impact: 'Reworked a synchronous workflow to process 10,000+ records per hour and remove timeout failures.'
   },
   {
     period: '2022',
     company: 'ASICS Digital',
     title: 'BI Developer',
-    copy: 'Built analytics pipelines and dashboards for e-commerce reporting, reducing manual work and contributing to revenue growth.'
+    copy: 'Built data pipelines and dashboards for e-commerce reporting, reducing manual reporting work and helping teams track revenue performance.'
   },
   {
     period: '2021',
     company: 'PanAgora Asset Management',
     title: 'DevOps Engineer',
-    copy: 'Automated CI/CD for data science workflows, cutting deployment time by 80% and making releases safer.'
+    copy: 'Automated CI/CD for data science workflows, cutting deployment time by 80% and making releases more consistent.'
   }
 ]
 
@@ -30,8 +36,8 @@ const projects = [
   {
     number: '01',
     title: 'Zenesis',
-    kicker: 'Business website · TypeScript',
-    copy: 'A client-facing platform that makes complex business setup and advisory services feel clear, credible, and easy to navigate.',
+    kicker: 'Business website, TypeScript',
+    copy: 'A website for a UAE business setup firm, covering company setup, tax, visas, banking, and ongoing corporate services.',
     href: 'https://www.zenesiscorp.com',
     image: '/images/project-zenesis.webp',
     visual: 'image'
@@ -39,8 +45,8 @@ const projects = [
   {
     number: '02',
     title: 'Upside',
-    kicker: 'iOS marketplace · Swift',
-    copy: 'A marketplace concept designed to make partnerships between creators and brands in the GCC simpler and more direct.',
+    kicker: 'iOS marketplace, Swift',
+    copy: 'An iOS marketplace concept for creators and brands in the GCC to find and manage partnerships.',
     href: 'https://github.com/nikdmello/upside',
     image: '/logos/upside_logo.png',
     visual: 'upside'
@@ -48,8 +54,8 @@ const projects = [
   {
     number: '03',
     title: 'Source of Truth',
-    kicker: 'Workflow system · TypeScript',
-    copy: 'A structured workspace for turning scattered claim files into reliable records that teams can review, validate, and trust.',
+    kicker: 'Review workspace, TypeScript',
+    copy: 'A workflow for turning scattered claim files into structured records that reviewers can validate against a source of truth.',
     href: 'https://source-of-truth-lovat.vercel.app/',
     visual: 'source'
   }
@@ -72,13 +78,18 @@ export default function Home() {
       <CinematicIntro>
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <h2>Building reliable systems from <em>complicated problems.</em></h2>
-          <p className="intro">I&apos;m Nikhil, a software engineer working across backend systems, cloud architecture, and thoughtful products. I care about the details that make technology feel clear and dependable.</p>
+          <h2>Backend systems, cloud infrastructure, and <em>product engineering.</em></h2>
+          <p className="intro">I&apos;m Nikhil, a software engineer based in Dubai. I work across backend systems, AWS, and product engineering. I like understanding how complicated systems work and making them more reliable and easier to use.</p>
           <div className="actions">
-            <ScrollButton className="primary" targetId="work">Explore my work <ArrowDown /></ScrollButton>
+            <ScrollButton className="primary" targetId="work">View my work <ArrowDown /></ScrollButton>
             <a className="text-link" href="https://github.com/nikdmello" target="_blank" rel="noreferrer">GitHub <ArrowUpRight /></a>
           </div>
-          <p className="credentials">Dubai, UAE · Backend systems · Cloud architecture · Product engineering</p>
+          <div className="credentials" aria-label="Location and areas of work">
+            <span>Dubai, UAE</span>
+            <span>Backend systems</span>
+            <span>AWS and cloud</span>
+            <span>Product engineering</span>
+          </div>
         </div>
 
         <div className="portrait-wrap">
@@ -93,7 +104,7 @@ export default function Home() {
       <section className="experience shell scene-stage" id="experience" data-scroll-stage>
         <div className="section-intro">
           <p className="section-tag">01 / Experience</p>
-          <h2>Engineering for the moments when <em>reliability matters.</em></h2>
+          <h2>Where I&apos;ve <em>worked.</em></h2>
         </div>
         <div className="timeline">
           {roles.map((role) => (
@@ -103,7 +114,7 @@ export default function Home() {
                 <p className="role-company">{role.company}</p>
                 <h3>{role.title}</h3>
                 <p>{role.copy}</p>
-                {role.impact && <p className="impact"><span>Impact</span>{role.impact}</p>}
+                {role.impact && <p className="impact"><span>Impact:</span>{role.impact}</p>}
               </div>
             </article>
           ))}
@@ -117,7 +128,7 @@ export default function Home() {
           <p className="section-tag light">02 / Selected work</p>
           <div className="work-head">
             <h2>Ideas made <em>useful.</em></h2>
-            <p>I learn by making things: client platforms, mobile products, open-source fixes, and experiments that sharpen how I think.</p>
+            <p>I learn by building. These are a few projects I&apos;ve worked on across web, mobile, and internal tools.</p>
           </div>
           <div className="project-grid">
             {projects.map((project, index) => (
@@ -143,8 +154,8 @@ export default function Home() {
             ))}
           </div>
           <div className="open-source-callout">
-            <div><p className="section-tag light">Open source</p><h3>Small fixes. Real users.</h3></div>
-            <p>Two contributions to VS Code, both merged and released, including fixes to screencast mode and Markdown preview parsing.</p>
+            <div><p className="section-tag light">Open source</p><h3>VS Code contributions</h3></div>
+            <p>Two contributions to VS Code, both merged and released. One fixed screencast mode behavior and the other fixed Markdown preview parsing.</p>
             <a className="text-link light-link" href="https://github.com/microsoft/vscode/pulls?q=is%3Apr+author%3Anikdmello" target="_blank" rel="noreferrer">View contributions <ArrowUpRight /></a>
           </div>
         </div>
@@ -156,9 +167,9 @@ export default function Home() {
         <div className="beyond-head">
           <div>
             <p className="section-tag">03 / Beyond the code</p>
-            <h2>Collecting moments,<br /><em>wherever curiosity leads.</em></h2>
+            <h2>Places I&apos;ve <em>photographed.</em></h2>
           </div>
-          <p>Travel has a way of resetting how I see things. These are a few places that made me stop, look twice, and remember there is always more to explore.</p>
+          <p>I take photos when I travel. These are a few places I wanted to remember.</p>
         </div>
         <div className="photo-grid">
           {photographs.map((photo, index) => (
@@ -182,11 +193,11 @@ export default function Home() {
       <section className="about shell scene-stage" id="about" data-scroll-stage>
         <div>
           <p className="section-tag">04 / About</p>
-          <h2>A curious mind, with a bias toward <em>building.</em></h2>
+          <h2>About <em>me</em></h2>
         </div>
         <div className="about-copy">
-          <p>I&apos;m happiest somewhere between understanding a complicated system and making it simpler. My work spans cloud infrastructure, backend services, data, and product interfaces. The through-line is always the same: ask better questions, then build something useful.</p>
-          <p>I&apos;m drawn to anything that helps me understand more of the world and what I&apos;m capable of within it.</p>
+          <p>I&apos;m a software engineer based in Dubai. Most of my work has been around backend services, cloud infrastructure, data, and internal tools. I like understanding how a system works, finding where it gets messy, and building something simpler.</p>
+          <p>Outside work, I&apos;m usually building side projects, learning something new, traveling, or taking photos.</p>
           <div className="stack" aria-label="Technical skills">{stack.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
       </section>
@@ -195,9 +206,9 @@ export default function Home() {
       <div className="scene-track" data-scroll-track="contact">
       <section className="contact scene-stage" data-scroll-stage>
         <div className="shell contact-inner">
-          <p className="section-tag">Let&apos;s connect</p>
-          <h2>Have a hard problem<br />worth <em>solving?</em></h2>
-          <p>I&apos;m always happy to meet thoughtful people building useful things.</p>
+          <p className="section-tag">Contact</p>
+          <h2>Want to <em>talk?</em></h2>
+          <p>If you&apos;re building something interesting, want to compare notes, or just want to say hi, send me an email.</p>
           <div className="contact-actions">
             <CopyEmailButton />
             <a className="social" href="https://linkedin.com/in/nikdmello" target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>

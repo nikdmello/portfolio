@@ -35,7 +35,7 @@ export function CopyEmailButton() {
   return (
     <button className="primary" type="button" onClick={copyEmail}>
       {copied ? <Check /> : <Mail />}
-      {copied ? 'Email copied' : 'Copy my email'}
+      {copied ? 'Email copied' : 'Copy email'}
     </button>
   )
 }

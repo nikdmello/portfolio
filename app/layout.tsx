@@ -17,7 +17,7 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://nikdmello.com'),
   title: 'Nikhil D\'Mello | Software Engineer',
-  description: 'Software engineer building backend services, distributed systems, and thoughtful products.',
+  description: 'Nikhil D\'Mello is a software engineer based in Dubai, working across backend systems, AWS, cloud infrastructure, and product engineering.',
   keywords: [
     'Nikhil D\'Mello',
     'software engineer',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Nikhil D\'Mello | Software Engineer',
-    description: 'Software engineer building backend services, distributed systems, and thoughtful products.',
+    description: 'Nikhil D\'Mello is a software engineer based in Dubai, working across backend systems, AWS, cloud infrastructure, and product engineering.',
     url: 'https://nikdmello.com',
     siteName: 'Nikhil D\'Mello',
     type: 'website',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'Nikhil D\'Mello | Software Engineer',
-    description: 'Software engineer building backend services, distributed systems, and thoughtful products.',
+    description: 'Nikhil D\'Mello is a software engineer based in Dubai, working across backend systems, AWS, cloud infrastructure, and product engineering.',
   },
 }
 
