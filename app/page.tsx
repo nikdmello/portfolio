@@ -6,12 +6,6 @@ import ScrollScenes from '@/components/ScrollScenes'
 
 const roles = [
   {
-    period: '2026–Present',
-    company: 'Zenesis Consulting',
-    title: 'Project Engineer',
-    copy: 'Coordinate the digital workflows behind a real estate handover project in Dubai, working across booking, CRM, inspection, and owner sign-off systems.'
-  },
-  {
     period: '2023–2026',
     company: 'Associa',
     title: 'Software Developer',
