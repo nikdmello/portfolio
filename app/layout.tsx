@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Instrument_Sans, Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Roboto } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import SkipLink from '@/components/SkipLink'
 import './globals.css'
@@ -9,8 +9,9 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-display'
 })
 
-const instrumentSans = Instrument_Sans({
+const roboto = Roboto({
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
   variable: '--font-body'
 })
 
@@ -59,10 +60,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${playfairDisplay.variable} ${instrumentSans.variable}`}
-      style={{ background: '#f4f1e8' }}
+      className={`scroll-smooth ${playfairDisplay.variable} ${roboto.variable}`}
+      style={{ background: '#0b0b0b' }}
     >
-      <body suppressHydrationWarning className="font-sans">
+      <body suppressHydrationWarning>
         <div>
           <SkipLink />
           {children}
