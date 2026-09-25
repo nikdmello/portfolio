@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowDown, ArrowUpRight, Github, Linkedin } from 'lucide-react'
 import { CopyEmailButton, ScrollButton } from '@/components/PortfolioActions'
+import RevealObserver from '@/components/RevealObserver'
 
 const roles = [
   {
@@ -82,20 +83,23 @@ const stack = ['TypeScript', 'JavaScript', 'Java', 'C# / .NET', 'Python', 'SQL',
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
-      <header className="site-header shell">
-        <ScrollButton className="wordmark" targetId="main-content">Nikhil D&apos;Mello</ScrollButton>
-        <nav aria-label="Main navigation">
-          <ScrollButton targetId="work">Work</ScrollButton>
-          <ScrollButton targetId="about">About</ScrollButton>
-          <ScrollButton targetId="contact">Contact</ScrollButton>
-          <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-        </nav>
+      <RevealObserver />
+      <header className="site-header">
+        <div className="site-header-inner shell">
+          <ScrollButton className="wordmark" targetId="main-content">Nikhil D&apos;Mello</ScrollButton>
+          <nav aria-label="Main navigation">
+            <ScrollButton targetId="work">Work</ScrollButton>
+            <ScrollButton targetId="about">About</ScrollButton>
+            <ScrollButton targetId="contact">Contact</ScrollButton>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          </nav>
+        </div>
       </header>
 
       <section className="hero shell" aria-labelledby="hero-title">
-        <div className="hero-copy">
+        <div className="hero-copy reveal-hero" data-reveal>
           <p className="hero-intro">Hi, I&apos;m Nikhil.</p>
-          <h1 id="hero-title">I build backend systems that stay reliable as they scale.</h1>
+          <h1 id="hero-title">I build reliable, scalable software.</h1>
           <p className="intro">I work across backend services, AWS, and product engineering. I like understanding how complicated systems work and making them more reliable and easier to use.</p>
           <div className="actions">
             <ScrollButton className="primary" targetId="work">View my work <ArrowDown /></ScrollButton>
@@ -105,10 +109,10 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="experience" aria-labelledby="experience-title">
-        <div className="section-heading">
+        <div className="section-heading reveal-heading" data-reveal>
           <h2 id="experience-title">Where I&apos;ve worked.</h2>
         </div>
-        <div className="data-table timeline">
+        <div className="data-table timeline reveal-table" data-reveal>
           {roles.map((role) => (
             <article key={role.company}>
               <time>{role.period}</time>
@@ -120,8 +124,8 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="work" aria-labelledby="work-title">
-        <div className="section-heading"><h2 id="work-title">Ideas made useful.</h2></div>
-        <div className="data-table projects">
+        <div className="section-heading reveal-heading" data-reveal><h2 id="work-title">Ideas made useful.</h2></div>
+        <div className="data-table projects reveal-table" data-reveal>
           {projects.map((project) => (
             <a className="project" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
               <span className="project-number">{project.number}</span>
@@ -140,11 +144,11 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="open-source" aria-labelledby="open-source-title">
-        <div className="section-heading split-heading">
+        <div className="section-heading split-heading reveal-heading" data-reveal>
           <h2 id="open-source-title">Open source contributions.</h2>
           <p>Small fixes to tools I use, merged and released.</p>
         </div>
-        <div className="data-table contribution-table">
+        <div className="data-table contribution-table reveal-table" data-reveal>
           {contributions.map((contribution) => (
             <a className="contribution-row" href={contribution.href} target="_blank" rel="noreferrer" key={contribution.reference}>
               <div className="contribution-project"><span>{contribution.project}</span><time>{contribution.date}</time></div>
@@ -157,13 +161,13 @@ export default function Home() {
       </section>
 
       <section className="section shell" id="photography" aria-labelledby="photography-title">
-        <div className="section-heading photography-heading">
+        <div className="section-heading photography-heading reveal-heading" data-reveal>
           <h2 id="photography-title">Places I&apos;ve photographed.</h2>
           <p>I take photos when I travel. These are a few places I wanted to remember.</p>
         </div>
         <div className="photo-grid">
-          {photographs.map((photo) => (
-            <figure key={photo.src}>
+          {photographs.map((photo, index) => (
+            <figure className={`photo-item photo-item-${index + 1}`} data-reveal key={photo.src}>
               <div className="photo"><Image src={photo.src} alt={`${photo.location}, photographed by Nikhil D'Mello`} fill sizes="(max-width: 760px) calc(100vw - 32px), 33vw" /></div>
               <figcaption><span>{photo.location}</span><time>{photo.date}</time></figcaption>
             </figure>
@@ -172,15 +176,15 @@ export default function Home() {
       </section>
 
       <section className="section about shell" id="about" aria-labelledby="about-title">
-        <div className="section-heading"><h2 id="about-title">About me.</h2></div>
-        <div className="about-copy">
+        <div className="section-heading reveal-heading" data-reveal><h2 id="about-title">About me.</h2></div>
+        <div className="about-copy" data-reveal>
           <p>I&apos;m a software engineer based in Dubai. Most of my work has been around backend services, cloud infrastructure, data, and internal tools. I like understanding how a system works, finding where it gets messy, and building something simpler.</p>
           <p>Outside work, I&apos;m usually building side projects, learning something new, traveling, or taking photos.</p>
           <div className="stack" aria-label="Technical skills">{stack.map((item) => <span key={item}>{item}</span>)}</div>
         </div>
       </section>
 
-      <section className="contact shell" id="contact" aria-labelledby="contact-title">
+      <section className="contact shell" id="contact" aria-labelledby="contact-title" data-reveal>
         <h2 id="contact-title">Want to talk?</h2>
         <p>If you&apos;re building something interesting, want to compare notes, or just want to say hi, send me an email.</p>
         <div className="contact-actions">
